@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirplaneControl.Service", "AirplaneControl\AirplaneControl.Service.csproj", "{115B55C3-8451-43C7-9C86-118F38BBE263}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirplaneControl.Service", "AirplaneControl\AirplaneControl.Service.csproj", "{115B55C3-8451-43C7-9C86-118F38BBE263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirPlaneControl.Domain", "AirPlaneControlService\AirPlaneControl.Domain.csproj", "{B7D5631B-01AF-4172-8EC7-C509FA0CE87E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirPlaneControl.Repository", "AirPlaneControl.Repository\AirPlaneControl.Repository.csproj", "{398299A7-F911-4567-B03E-E75D9CA6AD12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirplaneControl.Domain", "AirplaneControl.Domain\AirplaneControl.Domain.csproj", "{7CDC2264-2D5B-4065-87D2-AB18614076F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,14 @@ Global
 		{115B55C3-8451-43C7-9C86-118F38BBE263}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{115B55C3-8451-43C7-9C86-118F38BBE263}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{115B55C3-8451-43C7-9C86-118F38BBE263}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7D5631B-01AF-4172-8EC7-C509FA0CE87E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7D5631B-01AF-4172-8EC7-C509FA0CE87E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7D5631B-01AF-4172-8EC7-C509FA0CE87E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7D5631B-01AF-4172-8EC7-C509FA0CE87E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{398299A7-F911-4567-B03E-E75D9CA6AD12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{398299A7-F911-4567-B03E-E75D9CA6AD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{398299A7-F911-4567-B03E-E75D9CA6AD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{398299A7-F911-4567-B03E-E75D9CA6AD12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CDC2264-2D5B-4065-87D2-AB18614076F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CDC2264-2D5B-4065-87D2-AB18614076F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CDC2264-2D5B-4065-87D2-AB18614076F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CDC2264-2D5B-4065-87D2-AB18614076F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
