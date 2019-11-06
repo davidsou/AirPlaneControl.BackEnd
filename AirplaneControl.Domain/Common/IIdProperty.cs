@@ -6,6 +6,6 @@ namespace AirplaneControl.Domain.Common
 {
     public interface IIdProperty
     {
-        Guid Id { get; set; }
+        int Id { get; set; }
     }
 }

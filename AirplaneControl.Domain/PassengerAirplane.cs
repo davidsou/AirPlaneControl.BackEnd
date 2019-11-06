@@ -1,10 +1,18 @@
-﻿using System;
+﻿using AirplaneControl.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AirplaneControl.Domain
 {
-    interface PassengerAirplane
+    public class PassengerAirplane: BaseEntity
     {
+        public int PassengerId { get; set; }
+        public Passenger Passenger { get; set; }
+        public int AirplaneId { get; set; }
+        public Airplane Airplane { get; set; }
+        public string Description { get; set; }
+
+               
     }
 }
