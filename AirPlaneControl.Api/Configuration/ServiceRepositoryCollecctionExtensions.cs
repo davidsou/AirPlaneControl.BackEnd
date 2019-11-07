@@ -1,6 +1,9 @@
-﻿using AirPlaneControl.Repository;
+﻿using AirplaneControl.Domain;
+using AirplaneControl.Domain.Validators;
+using AirPlaneControl.Repository;
 using AirPlaneControl.Repository.Infra;
 using AirpPlaneControl.Service;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -19,12 +22,21 @@ namespace AirPlaneControl.Api.Configuration
             services.AddScoped<IPassengerService, PassengerService>();
 
             //repositories
-            services.AddScoped<IAirplaneRepository, AirPlaneRepository>();
+            services.AddScoped<IAirPlaneRepository, AirPlaneRepository>();
             services.AddScoped<IPassengerRepository, PassengerRepository>();
 
             //UnitOfWork
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            //Validators
+            services.AddScoped<IValidator<Airplane>, AirPlaneValidator>();
+            services.AddScoped<IValidator<Passenger>, PassengerValidator>();
+
+
             return services;
+
+            
+
         }
        
 

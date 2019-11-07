@@ -74,6 +74,9 @@ namespace AirPlaneControl.Api
             });
 
             app.UseMvc();
+            app.Run( async context => { 
+               context.Response.Redirect("swagger/ui/index");
+           });
         }
     }
 }

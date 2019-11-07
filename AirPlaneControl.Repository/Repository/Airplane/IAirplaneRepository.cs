@@ -6,7 +6,7 @@ using System.Text;
 namespace AirPlaneControl.Repository
 {
    
-    public interface IAirplaneRepository: IRepositoryBase<Airplane>
+    public interface IAirPlaneRepository: IRepositoryBase<Airplane>
     {
     }
 }

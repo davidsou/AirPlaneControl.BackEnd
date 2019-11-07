@@ -11,8 +11,8 @@ namespace AirpPlaneControl.Service
 {
     public class AirplaneService : BaseService<Airplane>,IAirplaneService
     {
-        public AirplaneService(IRepositoryBase<Airplane> repository, IUnitOfWork unitOfWork, IValidator<Airplane> validator) 
-            : base(repository, unitOfWork, validator)
+        public AirplaneService(IAirPlaneRepository  airplaneRepository, IUnitOfWork unitOfWork, IValidator<Airplane> validator) 
+            : base(airplaneRepository, unitOfWork, validator)
         {
         }
     }
