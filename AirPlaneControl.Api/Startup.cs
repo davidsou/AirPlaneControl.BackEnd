@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Linq;
 using System.Threading.Tasks;
+using AirPlaneControl.Api.AutoMapper;
 using AirPlaneControl.Api.Configuration;
 using AirPlaneControl.Repository;
 using Microsoft.AspNetCore.Builder;
@@ -30,6 +30,9 @@ namespace AirPlaneControl.Api
         {
             services.RegisterRepositoryServices();
 
+            //auto mapper start 
+            var mappingConfig = new AutoMapperConfig().Configure();
+            services.AddSingleton(x => mappingConfig.CreateMapper());
 
             services.AddSwaggerGen(c =>
             {
@@ -44,10 +47,18 @@ namespace AirPlaneControl.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
+
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                app.UseDeveloperExceptionPage();
+                var scopeServiceProvider = serviceScope.ServiceProvider;
+                var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
+                context.Database.Migrate();
+                if (env.IsDevelopment())
+                {
+                    app.UseDeveloperExceptionPage();
+                }
             }
+                
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

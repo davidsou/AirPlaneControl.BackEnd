@@ -11,7 +11,6 @@ namespace AirPlaneControl.Repository
 
         public DbSet<Passenger> Passengers { get; set; }
         public DbSet <Airplane> Airplanes { get; set; }
-       // public DbSet <PassengerAirplane> PassengersAirplanes { get; set; }
 
         
 

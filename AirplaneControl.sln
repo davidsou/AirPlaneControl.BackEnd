@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirPlaneControl.Api", "AirP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirpPlaneControl.Service", "AirpPlaneControl.Service\AirpPlaneControl.Service.csproj", "{AFF141C0-E3E1-482F-92BF-ED97A2D91200}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirPlaneControl.Test", "AirPlaneControl.Test\AirPlaneControl.Test.csproj", "{54D7D4FD-5B08-49ED-B306-57AFB0E8EDE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AFF141C0-E3E1-482F-92BF-ED97A2D91200}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFF141C0-E3E1-482F-92BF-ED97A2D91200}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFF141C0-E3E1-482F-92BF-ED97A2D91200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D7D4FD-5B08-49ED-B306-57AFB0E8EDE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D7D4FD-5B08-49ED-B306-57AFB0E8EDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D7D4FD-5B08-49ED-B306-57AFB0E8EDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D7D4FD-5B08-49ED-B306-57AFB0E8EDE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AirplaneControl.Domain\AirplaneControl.Domain.csproj" />
+    <ProjectReference Include="..\AirPlaneControl.Repository\AirPlaneControl.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
