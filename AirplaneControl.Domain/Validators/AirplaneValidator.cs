@@ -16,7 +16,7 @@ namespace AirplaneControl.Domain.Validators
                 .WithMessage(RequiredName);
 
             RuleFor(x => x.QuantityOfSeats)
-                .LessThanOrEqualTo(0)
+                .GreaterThan(0)
                 .WithMessage(RequiredQuantity);
         }
     }

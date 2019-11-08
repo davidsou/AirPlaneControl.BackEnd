@@ -33,6 +33,7 @@ namespace AirPlaneControl.Api
             //auto mapper start 
             var mappingConfig = new AutoMapperConfig().Configure();
             services.AddSingleton(x => mappingConfig.CreateMapper());
+            
 
             services.AddSwaggerGen(c =>
             {
@@ -55,7 +56,8 @@ namespace AirPlaneControl.Api
                 context.Database.Migrate();
                 if (env.IsDevelopment())
                 {
-                    app.UseDeveloperExceptionPage();
+                    var databaseSeed = new Seeder(context);
+                    databaseSeed.Seed();
                 }
             }
                 

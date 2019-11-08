@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using AirplaneControl.Domain;
 using AirplaneControl.Domain.Common;
 using AirPlaneControl.Api.ViewModel;
 using AirpPlaneControl.Service;
@@ -17,13 +18,12 @@ namespace AirPlaneControl.Api.Controllers
     public class AirplaneController : ControllerBase
     {
         private readonly IAirplaneService _airplaneService;
-        private readonly IMapper _mapper;
-       // private Expression<Func<T, object>> _defaultOrder = x => x.Id;
+       private readonly IMapper _mapper;
 
         public AirplaneController(IAirplaneService airplaneService, IMapper mapper)
         {
             _airplaneService = airplaneService;
-            _mapper = mapper;
+           _mapper = mapper;
         }
        [HttpGet]
         [Route("GetAllAirplane")]
@@ -31,22 +31,27 @@ namespace AirPlaneControl.Api.Controllers
         {
             var result = _airplaneService.GetAll().ToList();
 
-            List<AirPlaneVM> teste =  _mapper.Map<List<AirPlaneVM>>(result);
-            return teste;
+            List<AirPlaneVM> obj = _mapper.Map<List<AirPlaneVM>>(result);
+            return obj;
         }
 
         [HttpGet]
         [Route("FindAirplane")]
         public ActionResult<AirPlaneVM> GetById(int id)
         {
-            return new AirPlaneVM { Name = "Teste01", QuantityOfSeats = 50 };
+            var result = _airplaneService.Get(id);
+            var obj = _mapper.Map<AirPlaneVM>(result);
+            return obj;
         }
 
-        // POST api/values
+      
         [HttpPost]
         [Route("InsertAirplane")]
-        public void Post([FromBody] string value)
+        public Result<Airplane> Post(AirPlaneVM request)
         {
+            var obj = _mapper.Map<Airplane>(request);
+            var r = _airplaneService.Insert(obj);
+            return r;
         }
 
 
