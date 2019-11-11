@@ -18,33 +18,26 @@ namespace AirPlaneControl.Api.Controllers
     {
         private readonly IPassengerService _passengerService;
         private readonly IMapper _mapper;
-        public PassengerController()
+        public PassengerController(IPassengerService passengerService, IMapper mapper)
         {
-
-        }
-        [HttpGet]
-        [Route("ListAllPassangerByAirplane")]
-        public ActionResult<IList<PassengerVM>> GetAll()
-        {
-            var result = _passengerService.GetAll().ToList();
-
-            List<PassengerVM> obj = _mapper.Map<List<PassengerVM>>(result);
-            return obj;
+            _mapper = mapper;
+            _passengerService = passengerService;
         }
 
-        [HttpGet]
-        [Route("ListAllPassangerByAirplane")]
-        public ActionResult<PassengerVM> GetById(int id)
-        {
-            var result = _passengerService.Get(id);
-            var obj = _mapper.Map<PassengerVM>(result);
-            return obj;
-        }
+
+        //[HttpGet]
+        //[Route("ListAllPassangerByAirplane")]
+        //public ActionResult<PassengerVM> GetById(int id)
+        //{
+        //    var result = _passengerService.Get(id);
+        //    var obj = _mapper.Map<PassengerVM>(result);
+        //    return obj;
+        //}
 
 
         [HttpPost]
         [Route("InsertPassanger")]
-        public Result<Passenger> Post(PassengerVM request)
+        public Result<Passenger> Post(PassangerToAirplaneVM request)
         {
             var obj = _mapper.Map<Passenger>(request);
             var r = _passengerService.Insert(obj);
@@ -53,10 +46,10 @@ namespace AirPlaneControl.Api.Controllers
 
         [HttpPost]
         [Route("InsertPassangerToAirplane")]
-        public Result<Passenger> InsertPassangerToAirplane(PassengerVM request)
+        public Result<Passenger> InsertPassangerToAirplane(PassangerToAirplaneVM request)
         {
-            var obj = _mapper.Map<Passenger>(request);
-            var r = _passengerService.Insert(obj);
+            var obj = _mapper.Map<PassengerToAirPlane>(request);
+            var r = _passengerService.PassengerToAirPlane(obj);
             return r;
         }
 

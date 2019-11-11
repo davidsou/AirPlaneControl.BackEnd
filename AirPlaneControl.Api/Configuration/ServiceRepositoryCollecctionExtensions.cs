@@ -31,6 +31,7 @@ namespace AirPlaneControl.Api.Configuration
             //Validators
             services.AddScoped<IValidator<Airplane>, AirPlaneValidator>();
             services.AddScoped<IValidator<Passenger>, PassengerValidator>();
+            services.AddScoped<IValidator<PassengerToAirPlane>, PassengerToAirPlaneValidator>();
 
 
             return services;

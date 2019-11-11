@@ -24,9 +24,11 @@ namespace AirPlaneControl.Api.AutoMapper
         {
             CreateMap<Passenger, PassengerVM>();
             CreateMap<Airplane, AirPlaneVM>();
+            CreateMap<PassangerToAirplaneVM, PassengerToAirPlane>();
 
             CreateMap<AirPlaneVM, Airplane>().ReverseMap();
             CreateMap<PassengerVM, Passenger>().ReverseMap();
+            
         }
     }
 }

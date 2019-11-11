@@ -54,6 +54,14 @@ namespace AirPlaneControl.Api.Controllers
             return r;
         }
 
+        [HttpGet]
+        [Route("ListAllPassangerByAirplane")]
+        public ActionResult<IList<Airplane>> PassangersByAirplane(int airPlaneId)
+        {
 
+            var result = _airplaneService.GetBookWithAllUsers(airPlaneId).ToList();
+           
+            return Ok(result);
+        }
     }
 }

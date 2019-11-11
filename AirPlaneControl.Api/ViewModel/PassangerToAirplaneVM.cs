@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace AirPlaneControl.Api.ViewModel
 {
-    public class AirPlaneVM
+    public class PassangerToAirplaneVM
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int QuantityOfSeats { get; set; }
+        public int PassengerId { get; set; }
+        public int AirPlaneId { get; set; }
     }
 }
