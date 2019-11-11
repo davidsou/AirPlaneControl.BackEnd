@@ -36,8 +36,8 @@ namespace AirPlaneControl.Api.Controllers
 
 
         [HttpPost]
-        [Route("InsertPassanger")]
-        public Result<Passenger> Post(PassangerToAirplaneVM request)
+        [Route("InsertPassenger")]
+        public Result<Passenger> Post(PassengerVM request)
         {
             var obj = _mapper.Map<Passenger>(request);
             var r = _passengerService.Insert(obj);
@@ -45,8 +45,8 @@ namespace AirPlaneControl.Api.Controllers
         }
 
         [HttpPost]
-        [Route("InsertPassangerToAirplane")]
-        public Result<Passenger> InsertPassangerToAirplane(PassangerToAirplaneVM request)
+        [Route("InsertPassengerToAirplane")]
+        public Result<Passenger> InsertPassangerToAirplane(PassengerToAirplaneVM request)
         {
             var obj = _mapper.Map<PassengerToAirPlane>(request);
             var r = _passengerService.PassengerToAirPlane(obj);
@@ -54,15 +54,14 @@ namespace AirPlaneControl.Api.Controllers
         }
 
         [HttpPut]
-        [Route("ChangePassanger")]
-        public Result<Passenger> InsertPassangerToAirplane(int id, int idAirplane)
+        [Route("ChangePassenger")]
+        public Result<Passenger> ChangePassengerAirplane(PassengerToAirplaneVM request)
         {
-            //var obj = _mapper.Map<Passenger>(request);
-            //var r = _passengerService.Insert(obj);
-            return null;
+            var obj = _mapper.Map<PassengerToAirPlane>(request);
+            var r = _passengerService.ChangePassanger(obj);
+            return r;
         }
 
-        //iii.ChangePassanger(int id, IdAirplane);
 
 
     }

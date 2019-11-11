@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AirPlaneControl.Repository
 {
-    public class AirPlaneRepository : RepositoryBase<Airplane>, IAirPlaneRepository
+    public class AirPlaneRepository : RepositoryBase<AirPlane>, IAirPlaneRepository
     {
         public AirPlaneRepository(ApplicationDbContext context) : base(context) { }
     }

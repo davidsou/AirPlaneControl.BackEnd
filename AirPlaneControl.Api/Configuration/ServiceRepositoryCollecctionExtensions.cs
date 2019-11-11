@@ -18,7 +18,7 @@ namespace AirPlaneControl.Api.Configuration
         public static IServiceCollection RegisterRepositoryServices( this IServiceCollection services)
         {
             //services
-            services.AddScoped<IAirplaneService, AirplaneService>();
+            services.AddScoped<IAirplaneService, AirPlaneService>();
             services.AddScoped<IPassengerService, PassengerService>();
 
             //repositories
@@ -29,7 +29,7 @@ namespace AirPlaneControl.Api.Configuration
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             //Validators
-            services.AddScoped<IValidator<Airplane>, AirPlaneValidator>();
+            services.AddScoped<IValidator<AirPlane>, AirPlaneValidator>();
             services.AddScoped<IValidator<Passenger>, PassengerValidator>();
             services.AddScoped<IValidator<PassengerToAirPlane>, PassengerToAirPlaneValidator>();
 

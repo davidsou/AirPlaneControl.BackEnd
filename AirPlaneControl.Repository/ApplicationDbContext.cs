@@ -10,7 +10,7 @@ namespace AirPlaneControl.Repository
         public ApplicationDbContext() { }
 
         public DbSet<Passenger> Passengers { get; set; }
-        public DbSet <Airplane> Airplanes { get; set; }
+        public DbSet <AirPlane> Airplanes { get; set; }
 
         
 

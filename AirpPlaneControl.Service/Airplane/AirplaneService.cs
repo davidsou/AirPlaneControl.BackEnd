@@ -13,15 +13,15 @@ using System.Text;
 
 namespace AirpPlaneControl.Service
 {
-    public class AirplaneService : BaseService<Airplane>, IAirplaneService
+    public class AirPlaneService : BaseService<AirPlane>, IAirplaneService
     {
 
-        public AirplaneService(IAirPlaneRepository airplaneRepository, IUnitOfWork unitOfWork, IValidator<Airplane> validator)
+        public AirPlaneService(IAirPlaneRepository airplaneRepository, IUnitOfWork unitOfWork, IValidator<AirPlane> validator)
             : base(airplaneRepository, unitOfWork, validator)
         {
         }
 
-        public IList<Airplane> GetBookWithAllUsers(int airPlaneId)
+        public IList<AirPlane> GetBookWithAllUsers(int airPlaneId)
         {
             var airplanes = _repository
             .Get().Include(x => x.Passengers)

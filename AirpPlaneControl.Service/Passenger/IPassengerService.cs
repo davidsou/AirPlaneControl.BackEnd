@@ -7,8 +7,9 @@ namespace AirpPlaneControl.Service
 {
     public interface IPassengerService : IBaseService<Passenger>
     {
-         Result<Passenger> PassengerToAirPlane(PassengerToAirPlane passenger);
+        Result<Passenger> PassengerToAirPlane(PassengerToAirPlane passenger);
+        Result<Passenger> ChangePassanger(PassengerToAirPlane passengerToAirPlane);
     }
 
-    
+
 }

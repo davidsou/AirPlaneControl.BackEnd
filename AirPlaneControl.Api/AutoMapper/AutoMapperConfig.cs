@@ -23,10 +23,11 @@ namespace AirPlaneControl.Api.AutoMapper
         public AuthorMappingProfile()
         {
             CreateMap<Passenger, PassengerVM>();
-            CreateMap<Airplane, AirPlaneVM>();
-            CreateMap<PassangerToAirplaneVM, PassengerToAirPlane>();
+            CreateMap<AirPlane, AirPlaneVM>();
+            CreateMap<PassengerToAirplaneVM, PassengerToAirPlane>()
+                .ForMember( dest => dest.AiplaneId, opt => opt.MapFrom(src => src.AirPlaneId )) ;
 
-            CreateMap<AirPlaneVM, Airplane>().ReverseMap();
+            CreateMap<AirPlaneVM, AirPlane>().ReverseMap();
             CreateMap<PassengerVM, Passenger>().ReverseMap();
             
         }

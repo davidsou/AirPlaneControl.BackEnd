@@ -10,7 +10,6 @@ namespace AirPlaneControl.Api.ViewModel
     {
         public string Name { get; set; }
         public string Email { get; set; }
-        public int AirplaneId { get; set; }
-        public virtual Airplane Airplane { get; set; }
+       
     }
 }

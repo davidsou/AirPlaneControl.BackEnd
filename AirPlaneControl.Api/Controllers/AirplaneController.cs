@@ -47,16 +47,16 @@ namespace AirPlaneControl.Api.Controllers
       
         [HttpPost]
         [Route("InsertAirplane")]
-        public Result<Airplane> Post(AirPlaneVM request)
+        public Result<AirPlane> Post(AirPlaneVM request)
         {
-            var obj = _mapper.Map<Airplane>(request);
+            var obj = _mapper.Map<AirPlane>(request);
             var r = _airplaneService.Insert(obj);
             return r;
         }
 
         [HttpGet]
         [Route("ListAllPassangerByAirplane")]
-        public ActionResult<IList<Airplane>> PassangersByAirplane(int airPlaneId)
+        public ActionResult<IList<AirPlane>> PassangersByAirplane(int airPlaneId)
         {
 
             var result = _airplaneService.GetBookWithAllUsers(airPlaneId).ToList();

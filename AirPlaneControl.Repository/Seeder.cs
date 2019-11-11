@@ -20,7 +20,7 @@ namespace AirPlaneControl.Repository
 
             if (!_context.Airplanes.Any() && !_context.Passengers.Any())
             {
-                var airplane01 = new Airplane
+                var airplane01 = new AirPlane
                 {
                     Name = "Boeing 732",
                     QuantityOfSeats = 50,
@@ -47,13 +47,13 @@ namespace AirPlaneControl.Repository
                 };
 
 
-                var airplane02 = new Airplane
+                var airplane02 = new AirPlane
                 {
                     Name = "Embraer E190 ",
                     QuantityOfSeats = 50,
                 };
 
-                var airplane03 = new Airplane
+                var airplane03 = new AirPlane
                 {
                     Name = "Air Bus  360",
                     QuantityOfSeats = 50,

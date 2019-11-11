@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AirPlaneControl.Api.ViewModel
 {
-    public class PassangerToAirplaneVM
+    public class PassengerToAirplaneVM
     {
         public int PassengerId { get; set; }
         public int AirPlaneId { get; set; }

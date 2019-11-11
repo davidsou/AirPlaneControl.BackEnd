@@ -10,7 +10,7 @@ namespace AirplaneControl.Domain
         public int PassengerId { get; set; }
         public Passenger Passenger { get; set; }
         public int AirplaneId { get; set; }
-        public Airplane Airplane { get; set; }
+        public AirPlane Airplane { get; set; }
         public string Description { get; set; }
 
                

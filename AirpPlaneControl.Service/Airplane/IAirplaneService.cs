@@ -7,8 +7,8 @@ using System.Text;
 
 namespace AirpPlaneControl.Service
 {
-    public interface  IAirplaneService:IBaseService<Airplane>
+    public interface  IAirplaneService:IBaseService<AirPlane>
     {
-        IList<Airplane> GetBookWithAllUsers(int airPlaneId);
+        IList<AirPlane> GetBookWithAllUsers(int airPlaneId);
     }
 }
